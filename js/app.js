@@ -3,10 +3,11 @@
 	var Question = Backbone.Model.extend( {
 		defaults : {
 			coverImage : "img/placeholder.png",
-			title : "Some title",
-			author : "John Doe",
-			releaseDate : "2012",
-			keywords : "JavaScript Programming"
+			question : "What's your favourite colour?",
+			choice1 : "Yellow",
+			choice2 : "Orange",
+			choice3 : "Red",
+			choice4 : "Pink"
 		}
 	});
 
@@ -89,32 +90,7 @@
 		}
 	});
 
-	var quiz = [ {
-		title : "JS the good parts",
-		author : "John Doe",
-		releaseDate : "2012",
-		keywords : "JavaScript Programming"
-	}, {
-		title : "CS the better parts",
-		author : "John Doe",
-		releaseDate : "2012",
-		keywords : "CoffeeScript Programming"
-	}, {
-		title : "Scala for the impatient",
-		author : "John Doe",
-		releaseDate : "2012",
-		keywords : "Scala Programming"
-	}, {
-		title : "American Psyco",
-		author : "Bret Easton Ellis",
-		releaseDate : "2012",
-		keywords : "Novel Splatter"
-	}, {
-		title : "Eloquent JavaScript",
-		author : "John Doe",
-		releaseDate : "2012",
-		keywords : "JavaScript Programming"
-	} ]
+	var quiz = [ ]
 
 	var quizView = new QuizView();
 

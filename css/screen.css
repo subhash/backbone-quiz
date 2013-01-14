@@ -38,14 +38,14 @@ body {
     float:left;
 }
 
-#addQuestion label[for="title"], #addQuestion label[for="releaseDate"] {
+#addQuestion label[for="question"], #addQuestion label[for="choice1"], #addQuestion label[for="choice3"] {
     clear:both;
 }
 
 #addQuestion button {
     display:block;
     margin:5px 20px 10px 10px;
-    float: right;
+    float: left;
     clear: both;
 }
 

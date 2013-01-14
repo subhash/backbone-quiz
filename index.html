@@ -8,12 +8,12 @@
 <body>
 <div id="quiz">
 <form id="addQuestion" action="#">
-<div><label for="coverImage">CoverImage: </label><input
-	id="coverImage" type="file"> <label for="title">Title:
-</label><input id="title"> <label for="author">Author: </label><input
-	id="author"> <label for="releaseDate">Release date: </label><input
-	id="releaseDate"> <label for="keywords">Keywords: </label><input
-	id="keywords">
+<div> <label for="question">Question:
+</label><input id="question"> <label for="choice1">Choice 1: </label><input
+	id="choice1"> <label for="choice2">Choice 2: </label><input
+	id="choice2"> <label for="choice3">Choice 3: </label><input
+	id="choice3"> <label for="choice4">Choice 4: </label><input
+	id="choice4">
 <button id="add">Add</button>
 </div>
 </form>
@@ -21,10 +21,11 @@
 <script id="questionTemplate" type="text/template">
         <img src="<%= coverImage %>"/>
         <ul>
-            <li><%= title %></li>
-            <li><%= author %></li>
-            <li><%= releaseDate %></li>
-            <li><%= keywords %></li>
+            <li><%= question %></li>
+            <li>1. <%= choice1 %></li>
+            <li>2. <%= choice2 %></li>
+            <li>3. <%= choice3 %></li>
+			<li>4. <%= choice4 %></li>
         </ul>
     <button class="delete">Delete</button>
 
