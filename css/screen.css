@@ -1,0 +1,64 @@
+body {
+    background-color: #eee;
+}
+.questionContainer {
+    border: 1px solid #aaa;
+    width: 300px;
+    height: 130px;
+    background-color: #fff;
+    float: left;
+    margin: 5px;
+}
+
+.questionContainer img {
+    float: left;
+    margin: 10px;
+}
+
+.questionContainer ul {
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.questionContainer button {
+    float:right;
+    margin: 10px 10px;
+}
+
+#addQuestion label {
+    width:100px;
+    margin-right:10px;
+    text-align:right;
+    line-height:25px;
+}
+
+#addQuestion label, #addQuestion input {
+    display:block;
+    margin-bottom:10px;
+    float:left;
+}
+
+#addQuestion label[for="title"], #addQuestion label[for="releaseDate"] {
+    clear:both;
+}
+
+#addQuestion button {
+    display:block;
+    margin:5px 20px 10px 10px;
+    float: right;
+    clear: both;
+}
+
+#addQuestion div {
+    width: 550px;
+}
+
+#addQuestion div:after {
+    content:"";
+    display:block;
+    height:0;
+    visibility:hidden;
+    clear:both;
+    font-size:0;
+    line-height:0;
+}
