@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Quiz</title>
+<link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+<div id="quiz">
+<form id="addQuestion" action="#">
+<div> <label for="question">Question:
+</label><input id="question"> <label for="choice1">Choice 1: </label><input
+	id="choice1"> <label for="choice2">Choice 2: </label><input
+	id="choice2"> <label for="choice3">Choice 3: </label><input
+	id="choice3"> <label for="choice4">Choice 4: </label><input
+	id="choice4">
+<button id="add">Add</button>
+</div>
+</form>
+</div>
+<script id="questionTemplate" type="text/template">
+        <img src="<%= coverImage %>"/>
+        <ul>
+            <li><%= question %></li>
+            <li>1. <%= choice1 %></li>
+            <li>2. <%= choice2 %></li>
+            <li>3. <%= choice3 %></li>
+			<li>4. <%= choice4 %></li>
+        </ul>
+    <button class="delete">Delete</button>
+
+</script>
+<script src="js/jquery-1.7.1.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/backbone.js"></script>
+<script src="js/model.js"></script>
+<script src="js/create.js"></script>
+</body>
+</html>

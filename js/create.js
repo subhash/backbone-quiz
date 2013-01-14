@@ -15,6 +15,7 @@
 		model : Question
 	});
 
+
 	var QuestionView = Backbone.View.extend( {
 		tagName : "div",
 		className : "questionContainer",
@@ -89,8 +90,13 @@
 			"click #add" : "addQuestion"
 		}
 	});
-
-	var quiz = [ ]
+	
+	var quiz = [  {question : "What's your favourite colour?",
+		choice1 : "Yellow",
+		choice2 : "Orange",
+		choice3 : "Red",
+		choice4 : "Pink"} 
+        ]
 
 	var quizView = new QuizView();
 

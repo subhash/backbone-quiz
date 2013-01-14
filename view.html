@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Quiz</title>
+<link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+<div id="quizAnswer">
+</div>
+<script id="questionAnswerTemplate" type="text/template">
+        <ul>
+            <li><%= question %></li>
+            <li>1. <%= choice1 %></li>
+            <li>2. <%= choice2 %></li>
+            <li>3. <%= choice3 %></li>
+			<li>4. <%= choice4 %></li>
+        </ul>
+
+</script>
+<script src="js/jquery-1.7.1.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/backbone.js"></script>
+<script src="js/model.js"></script>
+<script src="js/view.js"></script>
+</body>
+</html>
