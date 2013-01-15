@@ -62,3 +62,11 @@ body {
     font-size:0;
     line-height:0;
 }
+
+
+#quizAnswer button {
+	display: block;
+	float: left;
+	clear: both;
+}
+

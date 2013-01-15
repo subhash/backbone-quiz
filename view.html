@@ -16,7 +16,13 @@
             <li>3. <%= choice3 %></li>
 			<li>4. <%= choice4 %></li>
         </ul>
-
+</script>
+<script id="questionAnswerControls" type="text/template">
+	<% if(back){ %>
+		<button class="back">Back</button>
+	<%} if(next) {%>
+		<button class="next">Next</button>
+	<%}%>
 </script>
 <script src="js/jquery-1.7.1.js"></script>
 <script src="js/underscore.js"></script>
