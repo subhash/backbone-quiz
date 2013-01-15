@@ -2,19 +2,17 @@
 
 	var Question = Backbone.Model.extend( {
 		defaults : {
-			coverImage : "img/placeholder.png",
 			question : "What's your favourite colour?",
 			choice1 : "Yellow",
 			choice2 : "Orange",
 			choice3 : "Red",
-			choice4 : "Pink"
+			choice4 : "Pink",
 		}
 	});
 
 	var Quiz = Backbone.Collection.extend( {
 		model : Question
 	});
-
 
 	var QuestionView = Backbone.View.extend( {
 		tagName : "div",
@@ -31,8 +29,14 @@
 			this.remove();
 		},
 		
+		optionClicked: function(e){
+			this.model.set("answer", e.target.value);
+		},
+		
 		events: {
-			"click .delete" : "deleteQuestion"
+			"click .delete" : "deleteQuestion",
+			"click input:radio" : "optionClicked"
+				
 		}
 	});
 
@@ -62,6 +66,7 @@
 
 		addQuestion : function(e) {
 			e.preventDefault();
+			console.log(this.collection.models[0]);
 			var formData = {};
 			$("#addQuestion div").children("input").each(function(i, el) {
 				if ($(el).val() !== "") {
@@ -85,18 +90,43 @@
 				}
 			});
 		},
+		
+		saveQuiz: function(){
+			that = this;
+			var json = {};
+			var index = 0;
+			_.each(this.collection.models, function(item) {
+				console.log(item.toJSON());
+			}, this);
+		},
 
 		events : {
-			"click #add" : "addQuestion"
+			"click #add" : "addQuestion",
+			"click #save" : "saveQuiz"
+				
 		}
 	});
 	
-	var quiz = [  {question : "What's your favourite colour?",
-		choice1 : "Yellow",
-		choice2 : "Orange",
-		choice3 : "Red",
-		choice4 : "Pink"} 
-        ]
+	var QuizAnswerView = Backbone.View.extend( {
+		el: $("quizAnswer"),
+		
+		initialize: function(){
+			this.collection = new Quiz(quiz);
+			this.render();
+		},
+		
+		render: function(){
+			renderQuestion(this.collection.models[1]);
+		},
+		
+		renderQuestion: function(item){
+			var answeringView = new AnsweringView({model: item});
+			this.$el.append(answeringView.render().el);
+		}
+		
+	});
+
+	var quiz = [ ]
 
 	var quizView = new QuizView();
 

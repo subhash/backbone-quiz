@@ -15,11 +15,12 @@
 	id="choice3"> <label for="choice4">Choice 4: </label><input
 	id="choice4">
 <button id="add">Add</button>
+<button id="save">Save</button>
 </div>
 </form>
 </div>
 <script id="questionTemplate" type="text/template">
-        <img src="<%= coverImage %>"/>
+<!--
         <ul>
             <li><%= question %></li>
             <li>1. <%= choice1 %></li>
@@ -28,6 +29,19 @@
 			<li>4. <%= choice4 %></li>
         </ul>
     <button class="delete">Delete</button>
+-->
+
+<form id="addQuestion2" action="#">
+<div> <label for="question"><%= question %>
+</label><label for="choice1"><%= choice1 %></label><input
+	type="radio" name="answer" value="1"/> <label for="choice2"><%= choice2 %></label><input
+	type="radio" name="answer" value="2"/> <label for="choice3"><%= choice3 %></label><input
+	type="radio" name="answer" value="3"/> <label for="choice4"><%= choice4 %></label><input
+	type="radio" name="answer" value="4"/>
+</div>
+</form>
+
+
 
 </script>
 <script src="js/jquery-1.7.1.js"></script>
