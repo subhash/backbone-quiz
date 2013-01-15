@@ -22,7 +22,9 @@
 
 		render : function() {
 			var tmpl = _.template(this.template);
-			this.$el.html(tmpl(this.model.toJSON()));
+			var json = this.model.toJSON();
+			json.id = this.id;
+			this.$el.html(tmpl(json));
 			return this;
 		}
 	});
@@ -35,6 +37,7 @@
 			this.collection = new Quiz(quiz);
 			this.index = 0;
 			this.render();
+			this.answers = {};
 		},
 
 		render : function() {
@@ -43,7 +46,8 @@
 
 		renderQuestion : function(item) {
 			var questionAnswerView = new QuestionAnswerView( {
-				model : item
+				model : item,
+				id : this.index
 			});
 			this.$el.html(questionAnswerView.render().el);
 			var tmpl = _.template(this.controls);
@@ -53,22 +57,31 @@
 			};
 			this.$el.append(tmpl(param));
 		},
-		
-		backQuestion: function() {
-			if(this.index > 0)
+
+		backQuestion : function() {
+			if (this.index > 0)
 				this.index = this.index - 1;
 			this.render();
 		},
 
 		nextQuestion : function() {
-			if(this.index < this.collection.models.length - 1)
+			var selector = "input:radio[name=answer"+this.index+"]:checked";
+			this.answers[this.index] = $(selector).val();
+			if (this.index < this.collection.models.length - 1)
 				this.index = this.index + 1;
 			this.render();
 		},
 
+		save : function() {
+			this.nextQuestion();
+			console.log(this.answers);
+		},
+
 		events : {
 			"click .next" : "nextQuestion",
-			"click .back" : "backQuestion"
+			"click .back" : "backQuestion",
+			"click .save" : "save"
+
 		}
 
 	});

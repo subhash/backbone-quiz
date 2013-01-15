@@ -64,7 +64,7 @@ body {
 }
 
 
-#quizAnswer button {
+#questionAnswerButtons {
 	display: block;
 	float: left;
 	clear: both;
